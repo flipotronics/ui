@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    body = "<h1 style='color:blue'>Environment variables</h1>"
+    body = "<h1 style='color:blue'>Flipotronics environment variables</h1>"
     for k, v in os.environ.items(): 
     	body += k + "=" + v + "<br/>"
 
