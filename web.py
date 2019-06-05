@@ -6,14 +6,14 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    body = "<h1 style='color:blue'>Flipotronics environment variables</h1>"
+    body = "<h1 style='color:blue'><h1>Flipotronics</h1><h2>Environment variables</h2>"
     for k, v in os.environ.items(): 
     	body += k + "=" + v + "<br/>"
-    out =  subprocess.Popen(['gpio', 'readall'],  stdout=subprocess.PIPE, 
-           stderr=subprocess.STDOUT)
-    stdout,stderr = out.communicate()
+#    out =  subprocess.Popen(['gpio', 'readall'],  stdout=subprocess.PIPE, 
+#           stderr=subprocess.STDOUT)
+#    stdout,stderr = out.communicate()
     body +="<br/><h2>GPIO status</h2>"
-    body += stdout.decode("utf-8") 
+#    body += stdout.decode("utf-8") 
     return body
 
 if __name__ == "__main__":
